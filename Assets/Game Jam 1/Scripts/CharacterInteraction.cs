@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterInteraction : MonoBehaviour
 {
@@ -29,6 +30,11 @@ public class CharacterInteraction : MonoBehaviour
          {
 	         if(circle.collider.tag == "Interactable")
 	         {
+		         Image image = circle.transform.GetComponentInChildren<Image>();
+		         if(image != null)
+		         {
+			         image.enabled = true;
+		         }
 		         Debug.Log("hit interactable");
 	         }
 	         Debug.Log("hit" + circle.collider.name);
