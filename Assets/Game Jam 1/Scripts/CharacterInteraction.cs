@@ -11,10 +11,11 @@ namespace Character
 		[SerializeField] private float raycastDist = 3f;
 		private bool inRange = false;
 		private bool inHiding = false;
-		private Image pastImage;
+		private Image currentImage;
 		private SpriteRenderer rend;
 
 		private RaycastHit2D hit;
+		[SerializeField] private Transform rayOriginRight;
 
 		private void Start()
 		{
@@ -26,18 +27,25 @@ namespace Character
 		/// </summary>
 		private void Hiding()
 		{
+			if(inRange && !inHiding)
+			{
+				currentImage.enabled = true;
+			}
 			if(inRange && Input.GetKeyDown(KeyCode.E))
 			{
 				Debug.Log("pressed E");
 				inHiding = true;
 				rend.enabled = false;
+				currentImage.enabled = false;
 			}
 			
-			if(inHiding && Input.GetKeyDown(KeyCode.Space))
+			if(inHiding && inRange && Input.GetKeyDown(KeyCode.Space))
 			{
 				inHiding = false;
 				rend.enabled = true;
-			} 
+				currentImage.enabled = true;
+			}
+			
 		}
 
 		/// <summary>
@@ -45,7 +53,7 @@ namespace Character
 		/// </summary>
 		private void InteractablesCast()
 		{
-			hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.right), raycastDist);
+			hit = Physics2D.Raycast(rayOriginRight.position, transform.TransformDirection(Vector2.right), raycastDist);
 
 			if(hit)
 			{
@@ -54,9 +62,8 @@ namespace Character
 					Image image = hit.transform.GetComponentInChildren<Image>();
 					if(image != null)
 					{
-						pastImage = image;
-						inRange = true; 
-						image.enabled = true;
+						currentImage = image;
+						inRange = true;
 					}
 			    
 					Debug.Log("hit interactable");
@@ -66,8 +73,8 @@ namespace Character
 			}
 			else if(!hit)
 			{
-				if(pastImage != null)
-					pastImage.enabled = false;
+				if(currentImage != null)
+					currentImage.enabled = false;
 				inRange = false;
 			}
 		}
