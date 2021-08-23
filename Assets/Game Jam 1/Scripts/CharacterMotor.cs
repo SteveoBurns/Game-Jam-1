@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Character
+namespace GameJam.Character
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class CharacterMotor : MonoBehaviour

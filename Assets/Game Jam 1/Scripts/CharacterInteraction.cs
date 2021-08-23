@@ -1,10 +1,12 @@
+using GameJam.Manager;
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Character
+namespace GameJam.Character
 {
 	public class CharacterInteraction : MonoBehaviour
 	{
@@ -14,11 +16,17 @@ namespace Character
 		private Image currentImage;
 		private SpriteRenderer rend;
 
-		private RaycastHit2D hit;
+		private CharacterMotor motor;
+		
+
+		private RaycastHit2D hitRight;
+		private RaycastHit2D hitLeft;
 		[SerializeField] private Transform rayOriginRight;
+		[SerializeField] private Transform rayOriginLeft;
 
 		private void Start()
 		{
+			motor = GetComponent<CharacterMotor>();
 			rend = GetComponentInParent<SpriteRenderer>();
 		}
 
@@ -29,21 +37,24 @@ namespace Character
 		{
 			if(inRange && !inHiding)
 			{
-				currentImage.enabled = true;
+				GameManager.theManager.EnterHiding();
 			}
 			if(inRange && Input.GetKeyDown(KeyCode.E))
 			{
 				Debug.Log("pressed E");
 				inHiding = true;
 				rend.enabled = false;
-				currentImage.enabled = false;
+				motor.enabled = false;
+				GameManager.theManager.ExitHiding();
 			}
 			
 			if(inHiding && inRange && Input.GetKeyDown(KeyCode.Space))
 			{
 				inHiding = false;
 				rend.enabled = true;
-				currentImage.enabled = true;
+				motor.enabled = true;
+				GameManager.theManager.EnterHiding();
+
 			}
 			
 		}
@@ -53,28 +64,29 @@ namespace Character
 		/// </summary>
 		private void InteractablesCast()
 		{
-			hit = Physics2D.Raycast(rayOriginRight.position, transform.TransformDirection(Vector2.right), raycastDist);
+			hitRight = Physics2D.Raycast(rayOriginRight.position, transform.TransformDirection(Vector2.right), raycastDist);
+			hitLeft = Physics2D.Raycast(rayOriginLeft.position, transform.TransformDirection(Vector2.left), raycastDist);
 
-			if(hit)
+			if(hitRight)
 			{
-				if(hit.collider.tag == "Interactable")
+				if(hitRight.collider.tag == "Interactable")
 				{
-					Image image = hit.transform.GetComponentInChildren<Image>();
-					if(image != null)
-					{
-						currentImage = image;
-						inRange = true;
-					}
-			    
+					inRange = true;
 					Debug.Log("hit interactable");
 				}
-		    
-				Debug.Log("hit" + hit.collider.name);
+				Debug.Log("hit" + hitRight.collider.name);
 			}
-			else if(!hit)
+			else if(hitLeft)
 			{
-				if(currentImage != null)
-					currentImage.enabled = false;
+				if(hitLeft.collider.CompareTag("Interactable"))
+				{
+					inRange = true;
+					Debug.Log("hit interactable");
+				}
+			}
+			else if(!hitRight || ! hitLeft)
+			{
+				GameManager.theManager.DisableHidingUI();
 				inRange = false;
 			}
 		}

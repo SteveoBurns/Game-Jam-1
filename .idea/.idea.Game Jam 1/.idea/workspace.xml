@@ -11,8 +11,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game Jam 1/Scripts/Settings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game Jam 1/Scripts/Guard.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game Jam 1/Scripts/CharacterInteraction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game Jam 1/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1wyBJwVhHpzAdoqETM6xhUg4Yis" />
   <component name="ProjectViewState">
@@ -57,6 +59,7 @@
       <option name="presentableId" value="Default" />
       <updated>1629420882387</updated>
       <workItem from="1629420887828" duration="12744000" />
+      <workItem from="1629678268569" duration="8006000" />
     </task>
     <servers />
   </component>
