@@ -1630,3 +1630,68 @@ Received Import Request.
 Start importing Packages/com.unity.2d.spriteshape/Editor/ObjectMenuCreation/DefaultAssets/Sprite Shapes/SpriteShapeEdge.png using Guid(0ae2b74b1edd14bb18dd7b65ae916a54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3eb4884b6c4413e76d7a75cdb4539360') in 0.068140 seconds
   Import took 0.071100 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 1790.020515 seconds.
+  path: Assets/Game Jam 1/Art/Torch Light.png
+  artifactKey: Guid(10959ef664dbaf4498aa3afa0aaa10e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game Jam 1/Art/Torch Light.png using Guid(10959ef664dbaf4498aa3afa0aaa10e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7037eb148eef943323bdfb0f43fe686') in 0.027165 seconds
+  Import took 0.029985 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012463 seconds.
+  path: Assets/Game Jam 1/Art/Torch Light.png
+  artifactKey: Guid(10959ef664dbaf4498aa3afa0aaa10e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game Jam 1/Art/Torch Light.png using Guid(10959ef664dbaf4498aa3afa0aaa10e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7037eb148eef943323bdfb0f43fe686') in 0.013287 seconds
+  Import took 0.015725 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.976531 seconds.
+  path: Assets/Game Jam 1/Art/Torch Light.png
+  artifactKey: Guid(10959ef664dbaf4498aa3afa0aaa10e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game Jam 1/Art/Torch Light.png using Guid(10959ef664dbaf4498aa3afa0aaa10e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5bc64fdbc7ed443e76fbc784c5b80aa') in 0.014323 seconds
+  Import took 0.017554 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.943914 seconds.
+  path: Assets/Game Jam 1/Art/Torch Light.png
+  artifactKey: Guid(10959ef664dbaf4498aa3afa0aaa10e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game Jam 1/Art/Torch Light.png using Guid(10959ef664dbaf4498aa3afa0aaa10e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1453a65424bf003829a94135156c3bd4') in 0.006963 seconds
+  Import took 0.010010 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 53.944329 seconds.
+  path: Assets/Game Jam 1/Art/Materials
+  artifactKey: Guid(a1dfc4d4907d00a4cb5f1c6ae5d1e801) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game Jam 1/Art/Materials using Guid(a1dfc4d4907d00a4cb5f1c6ae5d1e801) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d219d70dd23eb5a1ea4d80782dcb172') in 0.005262 seconds
+  Import took 0.007669 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000681 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.688 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.28 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1792 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.8 MB.
+System memory in use after: 89.8 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2419.
+Total: 1.855900 ms (FindLiveObjects: 0.325400 ms CreateObjectMapping: 0.132000 ms MarkObjects: 1.319600 ms  DeleteObjects: 0.078200 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
