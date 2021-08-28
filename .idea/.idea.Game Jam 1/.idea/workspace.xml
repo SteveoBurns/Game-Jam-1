@@ -14,6 +14,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Game Jam 1/Scripts/Settings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game Jam 1/Scripts/Guard.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game Jam 1/Scripts/CharacterInteraction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game Jam 1/Scripts/GuardSpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game Jam 1/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1wyBJwVhHpzAdoqETM6xhUg4Yis" />
@@ -29,6 +30,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../TAFE/MyGames/Diploma/Game Jam #1/GJam test\Game Jam 1.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\steve\Documents\TAFE\MyGames\Diploma\Game Jam #1\GJam test" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -60,6 +69,7 @@
       <updated>1629420882387</updated>
       <workItem from="1629420887828" duration="12744000" />
       <workItem from="1629678268569" duration="8661000" />
+      <workItem from="1630035306196" duration="14700000" />
     </task>
     <servers />
   </component>

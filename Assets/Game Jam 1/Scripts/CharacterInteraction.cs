@@ -12,9 +12,10 @@ namespace GameJam.Character
 	{
 		[SerializeField] private float raycastDist = 3f;
 		private bool inRange = false;
-		private bool inHiding = false;
+		public bool inHiding = false;
+		public bool madeIt = false;
 		private Image currentImage;
-		private SpriteRenderer rend;
+		public SpriteRenderer rend;
 
 		private CharacterMotor motor;
 		
@@ -27,7 +28,7 @@ namespace GameJam.Character
 		private void Start()
 		{
 			motor = GetComponent<CharacterMotor>();
-			rend = GetComponentInParent<SpriteRenderer>();
+			//rend = GetComponentInParent<SpriteRenderer>();
 		}
 
 		/// <summary>
@@ -60,7 +61,7 @@ namespace GameJam.Character
 		}
 
 		/// <summary>
-		/// Cast a ray and detect any Interactable objects, then enable the UI on those objects.
+		/// Cast a ray Left and Right and detect any Interactable objects, then enable the UI on those objects.
 		/// </summary>
 		private void InteractablesCast()
 		{
@@ -73,6 +74,11 @@ namespace GameJam.Character
 				{
 					inRange = true;
 					Debug.Log("hit interactable");
+				}
+				else if(hitRight.collider.CompareTag("Finish"))
+				{
+					madeIt = true;
+					GameManager.theManager.GameOver();
 				}
 				Debug.Log("hit" + hitRight.collider.name);
 			}

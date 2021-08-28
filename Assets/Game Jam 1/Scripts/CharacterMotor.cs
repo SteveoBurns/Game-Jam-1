@@ -16,6 +16,7 @@ namespace GameJam.Character
         private bool isMovingRight;
         private bool isMovingLeft;
         private bool isRunning;
+        private Animator anim;
 
         private Rigidbody2D rb;
         
@@ -23,6 +24,7 @@ namespace GameJam.Character
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
+            anim = GetComponentInChildren<Animator>();
         }
 
         // Update is called once per frame
@@ -30,7 +32,7 @@ namespace GameJam.Character
         {
             isMovingRight = Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow);
             isMovingLeft = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow);
-            isRunning = Input.GetKey(KeyCode.LeftShift) && isMovingLeft || Input.GetKey(KeyCode.LeftShift) && isMovingRight;
+            //isRunning = Input.GetKey(KeyCode.LeftShift) && isMovingLeft || Input.GetKey(KeyCode.LeftShift) && isMovingRight;
 
         }
 
@@ -44,17 +46,25 @@ namespace GameJam.Character
         /// </summary>
         private void Move()
         {
+            
             if(isMovingRight)
             {
                 rb.AddForce(this.transform.right * moveSpeed);
+                anim.SetTrigger("isMoving");
                 if(isRunning)
                     rb.AddForce(this.transform.right * runSpeed);
             }
-            if(isMovingLeft)
+            else if(isMovingLeft)
             {
                 rb.AddForce(-this.transform.right * moveSpeed);
+                anim.SetTrigger("isMovingLeft");
+
                 if(isRunning)
                     rb.AddForce(-this.transform.right * runSpeed);
+            }
+            else
+            {
+                anim.SetTrigger("isIdle");
             }
         }
     }
