@@ -48,8 +48,14 @@ namespace GameJam.Character
 				motor.enabled = false;
 				GameManager.theManager.ExitHiding();
 			}
+
+			if(inHiding)
+			{
+				GameManager.theManager.ExitHiding();
+
+			}
 			
-			if(inHiding && inRange && Input.GetKeyDown(KeyCode.Space))
+			if(inHiding && Input.GetKeyDown(KeyCode.Space))
 			{
 				inHiding = false;
 				rend.enabled = true;
