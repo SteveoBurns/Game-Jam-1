@@ -11,11 +11,19 @@ using UnityEngine;
 
 namespace GameJam.Guard
 {
+    /// <summary>
+    /// This class goes on the guard object and handles the guard once it has been instantiated by the GuardSpawner.
+    /// </summary>
     public class Guard : MonoBehaviour
     {
+        /// <summary>The move speed of the guard object.</summary>
+        [Header("Guard Speed")]
         [SerializeField] private float speed = 5;
 
+        /// <summary>Origin point of the right raycast.</summary>
+        [Header("Raycast Variables")]
         [SerializeField] private Transform rayOriginRight;
+        /// <summary>The distance of the raycast.</summary>
         [SerializeField] private float raycastDist = 5.22f;
     
         // Update is called once per frame
@@ -45,7 +53,6 @@ namespace GameJam.Guard
                     if(player != null && !player.inHiding)
                     {
                         GameManager.theManager.GameOver();
-                        
                     }
                     Debug.Log($"hit {hitRight1.collider.name}");
                 }

@@ -6,11 +6,16 @@ using UnityEngine.Serialization;
 
 namespace GameJam.Character
 {
+    /// <summary>
+    /// This class goes on the player object and controls the movement of the character.
+    /// </summary>
     [RequireComponent(typeof(Rigidbody2D))]
     public class CharacterMotor : MonoBehaviour
     {
+        /// <summary>The run speed of the player character, can be set in the inspector.</summary>
         [Header("Movement Variables")]
         [SerializeField] private float runSpeed = 20;
+        /// <summary>The move speed of the player character, can be set in the inspector.</summary>
         [SerializeField] private float moveSpeed = 5;
         
         private bool isMovingRight;
@@ -46,7 +51,6 @@ namespace GameJam.Character
         /// </summary>
         private void Move()
         {
-            
             if(isMovingRight)
             {
                 rb.AddForce(this.transform.right * moveSpeed);

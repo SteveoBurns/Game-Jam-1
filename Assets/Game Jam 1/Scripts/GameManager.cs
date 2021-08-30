@@ -11,8 +11,14 @@ using UnityEngine.UI;
 
 namespace GameJam.Manager
 {
+    /// <summary>
+    /// This is a singleton that goes on an empty object within the scene. It handles the UI elements to do with gameplay.
+    /// </summary>
     public class GameManager : MonoBehaviour
     {
+        /// <summary>
+        /// This struct holds the data for the PopUp display.
+        /// </summary>
         [Serializable]
         public struct PopUp
         {
@@ -21,9 +27,9 @@ namespace GameJam.Manager
             public bool endLevel;
         }
 
-        
         public static GameManager theManager;
 
+        /// <summary>The player object. Used to find position in scene.</summary>
         [Header("Player Character")]
         public GameObject player;
 
@@ -37,7 +43,6 @@ namespace GameJam.Manager
         [Header("Pop Up Messages")] 
         public GameObject popUp;
         public TMP_Text mainMenu;
-        public TMP_Text retry;
         public TMP_Text description;
         public TMP_Text title;
         public PopUp caught;
@@ -55,6 +60,10 @@ namespace GameJam.Manager
             Time.timeScale = 1;
         }
 
+        /// <summary>
+        /// Sets the PopUp active and assigns the passed strings into text fields. Enables main menu button if finished the level.
+        /// </summary>
+        /// <param name="_popUp"></param>
         public void PopUpCanvas(PopUp _popUp)
         {
             popUp.SetActive(true);
@@ -65,12 +74,18 @@ namespace GameJam.Manager
             Time.timeScale = 0;
         }
         
+        /// <summary>
+        /// Sets bools for hiding and shows the world space UI.
+        /// </summary>
         public void EnterHiding()
         {
             exitHiding.enabled = false;
             enterHiding.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + imageOffset, player.transform.position.z);
             enterHiding.enabled = true;
         }
+        /// <summary>
+        /// Sets the bools for exiting hiding and shows the world space UI.
+        /// </summary>
         public void ExitHiding()
         {
             enterHiding.enabled = false;
@@ -78,6 +93,9 @@ namespace GameJam.Manager
             exitHiding.enabled = true;
         }
 
+        /// <summary>
+        /// Disables the world space UI.
+        /// </summary>
         public void DisableHidingUI()
         {
             enterHiding.enabled = false;
@@ -102,17 +120,5 @@ namespace GameJam.Manager
         }
         
         
-
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
     }
 }

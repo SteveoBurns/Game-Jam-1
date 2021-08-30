@@ -8,27 +8,47 @@ using UnityEngine.UI;
 
 namespace GameJam.Character
 {
+	/// <summary>
+	/// This class goes on the player character and handles interactions with the world.
+	/// </summary>
 	public class CharacterInteraction : MonoBehaviour
 	{
+		/// <summary>The origin of the rightside raycast.</summary>
+		[Header("Raycast Origin Points")]
+		[SerializeField] private Transform rayOriginRight;
+		/// <summary>The origin of the leftside raycast.</summary>
+		[SerializeField] private Transform rayOriginLeft;
+		/// <summary>The distance of the raycasts.</summary>
 		[SerializeField] private float raycastDist = 3f;
-		private bool inRange = false;
-		public bool inHiding = false;
-		public bool madeIt = false;
-		private Image currentImage;
-		public SpriteRenderer rend;
-
-		private CharacterMotor motor;
 		
-
 		private RaycastHit2D hitRight;
 		private RaycastHit2D hitLeft;
-		[SerializeField] private Transform rayOriginRight;
-		[SerializeField] private Transform rayOriginLeft;
+		
+		/// <summary>The Sprite Renderer of the player object.</summary>
+		[Header("Character Sprite Renderer")]
+		public SpriteRenderer rend; 
+		
+		private bool inRange = false;
+		[Header("Character Bools")]
+		public bool inHiding = false;
+		public bool madeIt = false;
+
+		private CharacterMotor motor;
+
 
 		private void Start()
 		{
 			motor = GetComponent<CharacterMotor>();
-			//rend = GetComponentInParent<SpriteRenderer>();
+		}
+		
+		private void Update()
+		{
+			Hiding();
+		}
+
+		private void FixedUpdate()
+		{
+			InteractablesCast();
 		}
 
 		/// <summary>
@@ -103,16 +123,7 @@ namespace GameJam.Character
 			}
 		}
 
-		private void Update()
-		{
-			Hiding();
-		}
-
-		private void FixedUpdate()
-		{
-			InteractablesCast();
-			
-		}
+		
 
     
 	}
